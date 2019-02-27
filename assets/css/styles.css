@@ -22,6 +22,12 @@ div.sk-desc-row {
 .sk-right-align {
   text-align: right; }
 
+.sk-bold {
+  font-weight: bold; }
+
+.sk-italic {
+  font-style: italic; }
+
 .avatar-container {
   flex: 0 1 300px; }
   .avatar-container img#user_avatar {
