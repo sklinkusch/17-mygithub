@@ -33,10 +33,10 @@ class GithubUser {
         case "name-desc":
           this.sortItems("name", -1);
           break;
-        case "date-asc":
+        case "create-asc":
           this.sortItems("created_at", +1);
           break;
-        case "date-desc":
+        case "create-desc":
           this.sortItems("created_at", -1);
           break;
         case "push-asc":
@@ -46,7 +46,7 @@ class GithubUser {
           this.sortItems("pushed_at", -1);
           break;
         default:
-          this.sortItems("name_asc", +1);
+          this.sortItems("name", +1);
       }
     });
   }
@@ -178,6 +178,25 @@ class GithubUser {
   }
   set repos(value) {
     this._repos = value;
+  }
+  sortItems(property, direction) {
+    const mapped = this.data.map(function(repo, i) {
+      return { index: i, value: repo[property] };
+    });
+    let nameA, nameB;
+    mapped.sort((a, b) => {
+      nameA = a.value.toLowerCase();
+      nameB = b.value.toLowerCase();
+      if (nameA < nameB) {
+        return -1 * direction;
+      } else if (nameB < nameA) {
+        return 1 * direction;
+      } else {
+        return 0;
+      }
+    });
+    const sortedRepos = mapped.map(el => this.data[el.index]);
+    this.printRepos(sortedRepos);
   }
   updateInfo() {
     const url = `https://api.github.com/users/${this.name}?client_id=${
