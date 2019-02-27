@@ -41,7 +41,7 @@ class GithubUser {
   }
   printRepos(repos) {
     const repoContainer = document.querySelector("#repos");
-    this.data = repos;
+    this.viewData = repos;
     const html = repos
       .map(repo => {
         const {
@@ -171,7 +171,10 @@ class GithubUser {
     }`;
     fetch(reposUrl)
       .then(response => response.json())
-      .then(repos => this.printRepos(repos))
+      .then(repos => {
+        this.data = repos;
+        this.printRepos(repos);
+      })
       .catch(error => console.log(`Oops, an error again: ${error}`));
   }
 }
