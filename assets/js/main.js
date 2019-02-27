@@ -59,6 +59,10 @@ class GithubUser {
       }
     });
   }
+  filterRepos(filterValue) {
+    const filtered = this.data.filter(repo => repo.name.includes(filterValue));
+    this.printRepos(filtered);
+  }
   getDate(timestamp) {
     const dateStringArray = timestamp.substr(0, 10).split("-");
     const dateArray = dateStringArray.map(dateString => Number(dateString));
