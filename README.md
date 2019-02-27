@@ -9,7 +9,13 @@ A webapp to consume Github Api
 -> User repos https://api.github.com/users/leandroDCI/repos?client_id=xxxx&client_secret=yyyy  
 ## Requirements:
 - Create a **Class** and methods
-- Use Bootstrap
+- Use Bootstrap (optional but strongly suggested)
+
+## Features:
+- When you load the app it shows a user and his/her repos  
+- You can search for other users
+- Feel free to implement other features (filterning, sorting, etc)
+
 
 ## Bonus:  
 
