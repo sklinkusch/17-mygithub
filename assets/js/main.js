@@ -136,6 +136,7 @@ class GithubUser {
     const header = document.querySelector("h1");
     const image = document.querySelector("#user_avatar");
     const description = document.querySelector("#user_description");
+    document.title = `${this.name} - Github Search`;
     const {
       name,
       login,
