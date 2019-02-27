@@ -139,6 +139,7 @@ class GithubUser {
     const {
       name,
       login,
+      bio,
       avatar_url,
       company,
       location,
@@ -152,6 +153,7 @@ class GithubUser {
       html_url
     } = info;
     const insertName = name == null ? `<span class="sk-italic">no real name available</span>` : name;
+    const insertBio = bio == null ? `<span class="sk-italic">no biography available</span>` : bio;
     const insertLocation = location == null ? `<span class="sk-italic">no location available</span>` : location;
     const insertCompany = company == null ? `<span class="sk-italic">no company available</span>` : company;
     this.repos = public_repos;
@@ -169,6 +171,7 @@ class GithubUser {
     const html = `
       <div class="sk-desc-row">
         <div class="sk-bold sk-left-align">Real name:</div> <div class="sk-right-align">${insertName}</div>
+        <div class="sk-bold sk-left-align">Biography:</div> <div class="sk-right-align">${insertBio}</div>
         <div class="sk-bold sk-left-align">Location:</div> <div class="sk-right-align">${insertLocation}</div>
         <div class="sk-bold sk-left-align">Organization:</div> <div class="sk-right-align">${insertCompany}</div>
         <div class="sk-bold sk-left-align">Email:</div> <div class="sk-right-align">${insertEmail}</div>
