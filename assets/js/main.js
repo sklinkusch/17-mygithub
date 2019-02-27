@@ -6,6 +6,8 @@ class GithubUser {
     this.secret = "6c1e72cc2af26bdab69798e0ce85f86fb00c3584";
     this.data = null;
     this.viewData = null;
+    this._page = null;
+    this._pages = null;
     this.updateInfo();
     this.addEventListeners();
   }
@@ -78,10 +80,27 @@ class GithubUser {
   set name(newName) {
     this.githubName = newName;
   }
+
+  get page() {
+    return this._page;
+  }
+
+  set page(newPage) {
+    this._page = newPage;
+  }
+
+  get pages() {
+    return this._pages;
+  }
+
+  set pages(numPages) {
+    this._pages = numPages;
+  }
+
   printRepos(repos) {
     const repoContainer = document.querySelector("#repos");
     this.viewData = repos;
-    const html = repos
+    let html = repos
       .map(repo => {
         const {
           name,
@@ -226,11 +245,25 @@ class GithubUser {
   }
   updateRepos() {
     const numberRepos = this.repos;
+    let currentRepos;
+    if (this.page == null && numberRepos > 99) {
+      currentRepos = 99;
+      this.page = 1;
+      this.pages = Math.ceil(numberRepos / 99);
+    } else {
+      currentRepos = numberRepos;
+      this.page = 1;
+      this.pages = 1;
+    }
+    console.log(this.page);
+    console.log(this.pages);
+    console.log(currentRepos);
     const reposUrl = `https://api.github.com/users/${
       this.githubName
-      }/repos?per_page=${numberRepos}&client_id=${this.id}&client_secret=${
+      }/repos?page=${this.page}&per_page=${currentRepos}&client_id=${this.id}&client_secret=${
       this.secret
       }`;
+    console.log(reposUrl);
     fetch(reposUrl)
       .then(response => response.json())
       .then(repos => {
