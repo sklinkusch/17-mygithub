@@ -4,6 +4,8 @@ class GithubUser {
     this._repos = repositories;
     this.id = "3a6a22eb32c03ecfd02b";
     this.secret = "6c1e72cc2af26bdab69798e0ce85f86fb00c3584";
+    this.data = null;
+    this.viewData = null;
     this.updateInfo();
     this.addEventListeners();
   }
