@@ -14,7 +14,7 @@ A webapp to consume Github Api
 ## Features:
 - When you load the app it shows a user and his/her repos  
 - You can search for other users
-- Feel free to implement other features (filterning, sorting, etc)
+- Feel free to implement other features (filtering, sorting, etc)
 
 
 ## Bonus:  
