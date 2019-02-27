@@ -41,6 +41,7 @@ class GithubUser {
   }
   printRepos(repos) {
     const repoContainer = document.querySelector("#repos");
+    this.data = repos;
     const html = repos
       .map(repo => {
         const {
