@@ -2,22 +2,25 @@
 
 A webapp to consume Github Api
 
-## Setup:  
+## Setup:
+
 - Create an new OAuth App [here](https://github.com/settings/developers)
 - You can now consume the API with (e.g.)  
--> User data https://api.github.com/users/leandroDCI?client_id=XXX&client_secret=YYY  
--> User repos https://api.github.com/users/leandroDCI/repos?client_id=xxxx&client_secret=yyyy  
+  -> User data https://api.github.com/users/leandroDCI?client_id=XXX&client_secret=YYY  
+  -> User repos https://api.github.com/users/leandroDCI/repos?client_id=xxxx&client_secret=yyyy
+
 ## Requirements:
+
 - Create a **Class** and methods
 - Use Bootstrap (optional but strongly suggested)
 
 ## Features:
-- When you load the app it shows a user and his/her repos  
+
+- When you load the app it shows a user and his/her repos
 - You can search for other users
 - Feel free to implement other features (filtering, sorting, etc)
 
-
-## Bonus:  
+## Bonus:
 
 ```
 fetch(apiUrl)
@@ -25,7 +28,7 @@ fetch(apiUrl)
 	response => response.json()
 )
 .then(
-	repos => repos.forEach( 
+	repos => repos.forEach(
 		repo => console.log(repo)
 	)
 )
@@ -33,6 +36,3 @@ fetch(apiUrl)
 	err => console.log(`panic: ${err}`)
 )
 ```
-=======
-# Github-search
->>>>>>> Own_Repo/master
