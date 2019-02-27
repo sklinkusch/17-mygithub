@@ -255,15 +255,11 @@ class GithubUser {
       this.page = 1;
       this.pages = 1;
     }
-    console.log(this.page);
-    console.log(this.pages);
-    console.log(currentRepos);
     const reposUrl = `https://api.github.com/users/${
       this.githubName
       }/repos?page=${this.page}&per_page=${currentRepos}&client_id=${this.id}&client_secret=${
       this.secret
       }`;
-    console.log(reposUrl);
     fetch(reposUrl)
       .then(response => response.json())
       .then(repos => {

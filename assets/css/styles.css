@@ -16,6 +16,9 @@ div.sk-desc-row {
   div.sk-desc-row div {
     flex: 0 0 45%; }
 
+.sk-center-align {
+  text-align: center; }
+
 .sk-left-align {
   text-align: left; }
 
