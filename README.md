@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # myGithub
 
 A webapp to consume Github Api
