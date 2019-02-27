@@ -118,10 +118,10 @@ class GithubUser {
       <div class="btn-group">
       <a href="${html_url}" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">repository</button></a>
       ${
-        has_pages
-          ? `<a href="${githubPages}" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">GitHub Pages</button></a>`
-          : ""
-      }
+          has_pages
+            ? `<a href="${githubPages}" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">GitHub Pages</button></a>`
+            : ""
+          }
       </div>
       </div>
       </div>
@@ -151,17 +151,17 @@ class GithubUser {
       created_at,
       html_url
     } = info;
-    const insertName = name == null ? "" : name;
-    const insertLocation = location == null ? "" : location;
-    const insertCompany = company == null ? "" : company;
+    const insertName = name == null ? `<span class="sk-italic">no real name available</span>` : name;
+    const insertLocation = location == null ? `<span class="sk-italic">no location available</span>` : location;
+    const insertCompany = company == null ? `<span class="sk-italic">no company available</span>` : company;
     this.repos = public_repos;
     const insertEmail =
       email == null
-        ? "no email address provided"
+        ? `<span class="sk-italic">no email address available</span>`
         : `<a href="mailto:${email}">${email}</a>`;
     const insertBlog =
       blog == null
-        ? "no website provided"
+        ? `<span class="sk-italic">no website available</span>`
         : `<a href="${blog}" target=_blank>${blog}</a>`;
     const username = `${login}`;
     header.innerHTML = username;
@@ -177,8 +177,8 @@ class GithubUser {
         <div class="sk-bold sk-left-align">Followers:</div> <div class="sk-right-align">${followers}</div>
         <div class="sk-bold sk-left-align">Following:</div> <div class="sk-right-align">${following}</div>
         <div class="sk-bold sk-left-align">Created at:</div> <div class="sk-right-align">${this.getDate(
-          created_at
-        )}</div>
+      created_at
+    )}</div>
         <div class="sk-bold sk-left-align">Website:</div> <div class="sk-right-align">${insertBlog}</div>
         <div class="sk-bold sk-left-align">GitHub:</div> <div class="sk-right-align"><a href="${html_url}" target=_blank>${html_url}</a></div>
     </div>
@@ -193,7 +193,7 @@ class GithubUser {
     this._repos = value;
   }
   sortItems(property, direction) {
-    const mapped = this.data.map(function(repo, i) {
+    const mapped = this.data.map(function (repo, i) {
       return { index: i, value: repo[property] };
     });
     let nameA, nameB;
@@ -214,7 +214,7 @@ class GithubUser {
   updateInfo() {
     const url = `https://api.github.com/users/${this.name}?client_id=${
       this.id
-    }&client_secret=${this.secret}`;
+      }&client_secret=${this.secret}`;
     fetch(url)
       .then(response => response.json())
       .then(userinfo => this.printUserInfo(userinfo))
@@ -224,9 +224,9 @@ class GithubUser {
     const numberRepos = this.repos;
     const reposUrl = `https://api.github.com/users/${
       this.githubName
-    }/repos?per_page=${numberRepos}&client_id=${this.id}&client_secret=${
+      }/repos?per_page=${numberRepos}&client_id=${this.id}&client_secret=${
       this.secret
-    }`;
+      }`;
     fetch(reposUrl)
       .then(response => response.json())
       .then(repos => {
