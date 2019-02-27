@@ -35,6 +35,14 @@
             id="searchfield"
             placeholder="Search for users"
           /><button type="button" class="btn btn-light" id="searchbutton">Search</button> 
+          <select id="sort">
+            <option value="name-asc">Name A-Z</option>
+            <option value="name-desc">Name Z-A</option>
+            <option value="create-asc">Date created, chronological</option>
+            <option value="create-desc">Date created, antichronological</option>
+            <option value="push-asc">Last pushed commit, chronological</option>
+            <option value="push-desc">Last pushed commit, antichronological</option>
+          </select>
         </form>
       </div>
     </nav>
