@@ -50,6 +50,14 @@ class GithubUser {
           this.sortItems("name", +1);
       }
     });
+    filterfield.addEventListener("input", event => {
+      const filterValue = event.target.value;
+      if (filterValue != "") {
+        this.filterRepos(filterValue);
+      } else {
+        this.printRepos(this.data);
+      }
+    });
   }
   getDate(timestamp) {
     const dateStringArray = timestamp.substr(0, 10).split("-");
