@@ -12,6 +12,7 @@ class GithubUser {
   addEventListeners() {
     const searchbutton = document.querySelector("#searchbutton");
     const searchfield = document.querySelector("#searchfield");
+    const sortdropdown = document.querySelector("#sort");
     searchbutton.addEventListener("click", () => {
       const searchValue = searchfield.value;
       let user;
@@ -22,6 +23,31 @@ class GithubUser {
       }
       this.name = user;
       this.updateInfo();
+    });
+    sortdropdown.addEventListener("input", event => {
+      const sortValue = event.target.value;
+      switch (sortValue) {
+        case "name-asc":
+          this.sortItems("name", +1);
+          break;
+        case "name-desc":
+          this.sortItems("name", -1);
+          break;
+        case "date-asc":
+          this.sortItems("created_at", +1);
+          break;
+        case "date-desc":
+          this.sortItems("created_at", -1);
+          break;
+        case "push-asc":
+          this.sortItems("pushed_at", +1);
+          break;
+        case "push-desc":
+          this.sortItems("pushed_at", -1);
+          break;
+        default:
+          this.sortItems("name_asc", +1);
+      }
     });
   }
   getDate(timestamp) {
