@@ -13,6 +13,7 @@ class GithubUser {
     const searchbutton = document.querySelector("#searchbutton");
     const searchfield = document.querySelector("#searchfield");
     const sortdropdown = document.querySelector("#sort");
+    const filterfield = document.querySelector("#filterfield");
     searchbutton.addEventListener("click", () => {
       const searchValue = searchfield.value;
       let user;
