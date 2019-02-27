@@ -109,7 +109,7 @@ class GithubUser {
       <div class="card-body">
       <ul>
       ${shortDescription != null ? `<li>${shortDescription}</li>` : ""}
-      <li>main language: ${language}</li>
+      ${language != null ? `<li>main language: ${language}</li>` : ""}
       <li>created on ${this.getDate(created_at)}</li>
       <li>last push on ${this.getDate(pushed_at)}</li>
       <li>published on GitHub Pages: ${has_pages ? "yes" : "no"}</li>
