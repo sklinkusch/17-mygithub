@@ -1,0 +1,9 @@
+.avatar-container {
+  flex: 0 1 300px;
+  img#user_avatar {
+    width: 100%;
+  }
+}
+p#user_description {
+  flex: 0 0 calc(100% - 350px);
+}

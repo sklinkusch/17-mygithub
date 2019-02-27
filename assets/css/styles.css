@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+div.userInfo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+div.sk-desc-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  div.sk-desc-row div {
+    flex: 0 0 45%; }
+
+.sk-left-align {
+  text-align: left; }
+
+.sk-right-align {
+  text-align: right; }
+
+.avatar-container {
+  flex: 0 1 300px; }
+  .avatar-container img#user_avatar {
+    width: 100%; }
+
+p#user_description {
+  flex: 0 0 calc(100% - 350px); }
+
+/*# sourceMappingURL=styles.css.map */

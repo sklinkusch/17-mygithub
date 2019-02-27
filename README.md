@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # myGithub
 
 A webapp to consume Github Api
@@ -33,3 +34,6 @@ fetch(apiUrl)
 	err => console.log(`panic: ${err}`)
 )
 ```
+=======
+# Github-search
+>>>>>>> Own_Repo/master

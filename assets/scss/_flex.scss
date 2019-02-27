@@ -1,0 +1,14 @@
+div.userInfo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+div.sk-desc-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  div {
+    flex: 0 0 45%;
+  }
+}
