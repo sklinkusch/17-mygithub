@@ -16,6 +16,8 @@ class GithubUser {
     const searchfield = document.querySelector("#searchfield");
     const sortdropdown = document.querySelector("#sort");
     const filterfield = document.querySelector("#filterfield");
+    const prev = document.querySelector("#prev");
+    const next = document.querySelector("#next");
     searchbutton.addEventListener("click", () => {
       const searchValue = searchfield.value;
       let user;
@@ -58,6 +60,18 @@ class GithubUser {
         this.filterRepos(filterValue);
       } else {
         this.printRepos(this.data);
+      }
+    });
+    prev.addEventListener("click", () => {
+      if (this.page > 1) {
+        this.page = this.page - 1;
+        this.updateRepos();
+      }
+    });
+    next.addEventListener("click", () => {
+      if (this.page < this.pages) {
+        this.page = this.page + 1;
+        this.updateRepos();
       }
     });
   }
@@ -249,6 +263,9 @@ class GithubUser {
     if (this.page == null && numberRepos > 99) {
       currentRepos = 99;
       this.page = 1;
+      this.pages = Math.ceil(numberRepos / 99);
+    } else if (numberRepos > 99) {
+      currentRepos = 99;
       this.pages = Math.ceil(numberRepos / 99);
     } else {
       currentRepos = numberRepos;
