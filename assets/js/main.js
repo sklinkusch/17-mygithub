@@ -113,6 +113,7 @@ class GithubUser {
 
   printRepos(repos) {
     const repoContainer = document.querySelector("#repos");
+    const pageInfo = document.querySelector("#page-info");
     this.viewData = repos;
     let html = repos
       .map(repo => {
@@ -151,10 +152,10 @@ class GithubUser {
       <div class="btn-group">
       <a href="${html_url}" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">repository</button></a>
       ${
-          has_pages
-            ? `<a href="${githubPages}" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">GitHub Pages</button></a>`
-            : ""
-          }
+        has_pages
+          ? `<a href="${githubPages}" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">GitHub Pages</button></a>`
+          : ""
+      }
       </div>
       </div>
       </div>
@@ -164,6 +165,7 @@ class GithubUser {
       })
       .join("");
     repoContainer.innerHTML = html;
+    pageInfo.value = `page ${this.page} of ${this.pages}`;
   }
   printUserInfo(info) {
     const header = document.querySelector("h1");
@@ -186,10 +188,22 @@ class GithubUser {
       created_at,
       html_url
     } = info;
-    const insertName = name == null ? `<span class="sk-italic">no real name available</span>` : name;
-    const insertBio = bio == null ? `<span class="sk-italic">no biography available</span>` : bio;
-    const insertLocation = location == null ? `<span class="sk-italic">no location available</span>` : location;
-    const insertCompany = company == null ? `<span class="sk-italic">no company available</span>` : company;
+    const insertName =
+      name == null
+        ? `<span class="sk-italic">no real name available</span>`
+        : name;
+    const insertBio =
+      bio == null
+        ? `<span class="sk-italic">no biography available</span>`
+        : bio;
+    const insertLocation =
+      location == null
+        ? `<span class="sk-italic">no location available</span>`
+        : location;
+    const insertCompany =
+      company == null
+        ? `<span class="sk-italic">no company available</span>`
+        : company;
     this.repos = public_repos;
     const insertEmail =
       email == null
@@ -214,8 +228,8 @@ class GithubUser {
         <div class="sk-bold sk-left-align">Followers:</div> <div class="sk-right-align">${followers}</div>
         <div class="sk-bold sk-left-align">Following:</div> <div class="sk-right-align">${following}</div>
         <div class="sk-bold sk-left-align">Created at:</div> <div class="sk-right-align">${this.getDate(
-      created_at
-    )}</div>
+          created_at
+        )}</div>
         <div class="sk-bold sk-left-align">Website:</div> <div class="sk-right-align">${insertBlog}</div>
         <div class="sk-bold sk-left-align">GitHub:</div> <div class="sk-right-align"><a href="${html_url}" target=_blank>${html_url}</a></div>
     </div>
@@ -230,7 +244,7 @@ class GithubUser {
     this._repos = value;
   }
   sortItems(property, direction) {
-    const mapped = this.data.map(function (repo, i) {
+    const mapped = this.data.map(function(repo, i) {
       return { index: i, value: repo[property] };
     });
     let nameA, nameB;
@@ -251,7 +265,7 @@ class GithubUser {
   updateInfo() {
     const url = `https://api.github.com/users/${this.name}?client_id=${
       this.id
-      }&client_secret=${this.secret}`;
+    }&client_secret=${this.secret}`;
     fetch(url)
       .then(response => response.json())
       .then(userinfo => this.printUserInfo(userinfo))
@@ -274,9 +288,9 @@ class GithubUser {
     }
     const reposUrl = `https://api.github.com/users/${
       this.githubName
-      }/repos?page=${this.page}&per_page=${currentRepos}&client_id=${this.id}&client_secret=${
-      this.secret
-      }`;
+    }/repos?page=${this.page}&per_page=${currentRepos}&client_id=${
+      this.id
+    }&client_secret=${this.secret}`;
     fetch(reposUrl)
       .then(response => response.json())
       .then(repos => {
