@@ -178,6 +178,7 @@ class GithubUser {
       .join("");
     repoContainer.innerHTML = html;
     pageInfo.value = `page ${this.page} of ${this.pages}`;
+    this.controlButtons();
   }
   printUserInfo(info) {
     const header = document.querySelector("h1");
