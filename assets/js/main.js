@@ -180,7 +180,7 @@ class GithubUser {
   }
   printUserInfo(info) {
     const header = document.querySelector("h1");
-    const image = document.querySelector("#user_avatar");
+    const image = document.querySelector("#avatar-container");
     const description = document.querySelector("#user_description");
     document.title = `${this.name} - Github Search`;
     const {
@@ -226,7 +226,8 @@ class GithubUser {
         : `<a href="${blog}" target=_blank>${blog}</a>`;
     const username = `${login}`;
     header.innerHTML = username;
-    image.src = avatar_url;
+    const imageHTML = `<img src="${avatar_url}" alt="picture of ${name}"/>`;
+    image.innerHTML = imageHTML;
     const html = `
       <div class="sk-desc-row">
         <div class="sk-bold sk-left-align">Real name:</div> <div class="sk-right-align">${insertName}</div>
