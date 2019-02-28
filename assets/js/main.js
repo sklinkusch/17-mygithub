@@ -75,6 +75,18 @@ class GithubUser {
       }
     });
   }
+  controlButtons() {
+    const prev = document.querySelector("#prev");
+    const next = document.querySelector("#next");
+    prev.disabled = false;
+    next.disabled = false;
+    if (this.page == 1) {
+      prev.disabled = true;
+    }
+    if (this.page == this.pages) {
+      next.disabled = true;
+    }
+  }
   filterRepos(filterValue) {
     const filtered = this.data.filter(repo => repo.name.includes(filterValue));
     this.printRepos(filtered);
