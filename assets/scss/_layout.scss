@@ -1,7 +1,8 @@
 .avatar-container {
-  flex: 0 1 300px;
+  flex: 0 1 250px;
+  overflow: scroll;
   img#user_avatar {
-    width: 100%;
+    width: 250px;
   }
   @media screen and (max-width: 730px) {
     flex: 0 0 100%;

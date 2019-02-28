@@ -36,9 +36,10 @@ div.sk-desc-row {
   font-style: italic; }
 
 .avatar-container {
-  flex: 0 1 300px; }
+  flex: 0 1 250px;
+  overflow: scroll; }
   .avatar-container img#user_avatar {
-    width: 100%; }
+    width: 250px; }
   @media screen and (max-width: 730px) {
     .avatar-container {
       flex: 0 0 100%; } }
