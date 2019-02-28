@@ -39,4 +39,8 @@ div.sk-desc-row {
 p#user_description {
   flex: 0 0 calc(100% - 350px); }
 
+input#page-info {
+  width: 120px;
+  text-align: center; }
+
 /*# sourceMappingURL=styles.css.map */
