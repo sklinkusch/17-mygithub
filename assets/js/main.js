@@ -162,10 +162,10 @@ class GithubUser {
       <div class="btn-group">
       <a href="${html_url}" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">repository</button></a>
       ${
-        has_pages
-          ? `<a href="${githubPages}" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">GitHub Pages</button></a>`
-          : ""
-      }
+          has_pages
+            ? `<a href="${githubPages}" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">GitHub Pages</button></a>`
+            : ""
+          }
       </div>
       </div>
       </div>
@@ -226,7 +226,7 @@ class GithubUser {
         : `<a href="${blog}" target=_blank>${blog}</a>`;
     const username = `${login}`;
     header.innerHTML = username;
-    const imageHTML = `<img src="${avatar_url}" alt="picture of ${name}"/>`;
+    const imageHTML = `<img src="${avatar_url}" alt="picture of ${name}" width=280px/>`;
     image.innerHTML = imageHTML;
     const html = `
       <div class="sk-desc-row">
@@ -240,8 +240,8 @@ class GithubUser {
         <div class="sk-bold sk-left-align">Followers:</div> <div class="sk-right-align">${followers}</div>
         <div class="sk-bold sk-left-align">Following:</div> <div class="sk-right-align">${following}</div>
         <div class="sk-bold sk-left-align">Created at:</div> <div class="sk-right-align">${this.getDate(
-          created_at
-        )}</div>
+      created_at
+    )}</div>
         <div class="sk-bold sk-left-align">Website:</div> <div class="sk-right-align">${insertBlog}</div>
         <div class="sk-bold sk-left-align">GitHub:</div> <div class="sk-right-align"><a href="${html_url}" target=_blank>${html_url}</a></div>
     </div>
@@ -256,7 +256,7 @@ class GithubUser {
     this._repos = value;
   }
   sortItems(property, direction) {
-    const mapped = this.data.map(function(repo, i) {
+    const mapped = this.data.map(function (repo, i) {
       return { index: i, value: repo[property] };
     });
     let nameA, nameB;
@@ -277,7 +277,7 @@ class GithubUser {
   updateInfo() {
     const url = `https://api.github.com/users/${this.name}?client_id=${
       this.id
-    }&client_secret=${this.secret}`;
+      }&client_secret=${this.secret}`;
     fetch(url)
       .then(response => response.json())
       .then(userinfo => this.printUserInfo(userinfo))
@@ -300,9 +300,9 @@ class GithubUser {
     }
     const reposUrl = `https://api.github.com/users/${
       this.githubName
-    }/repos?page=${this.page}&per_page=${currentRepos}&client_id=${
+      }/repos?page=${this.page}&per_page=${currentRepos}&client_id=${
       this.id
-    }&client_secret=${this.secret}`;
+      }&client_secret=${this.secret}`;
     fetch(reposUrl)
       .then(response => response.json())
       .then(repos => {

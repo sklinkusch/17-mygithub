@@ -36,16 +36,16 @@ div.sk-desc-row {
   font-style: italic; }
 
 .avatar-container {
-  flex: 0 1 250px;
-  overflow: scroll; }
+  flex: 0 0 280px;
+  width: 280px; }
   .avatar-container img#user_avatar {
-    width: 250px; }
+    width: 280px; }
   @media screen and (max-width: 730px) {
     .avatar-container {
       flex: 0 0 100%; } }
 
 p#user_description {
-  flex: 0 0 calc(100% - 350px); }
+  flex: 0 0 calc(100% - 320px); }
 
 input#page-info {
   width: 120px;
