@@ -3,6 +3,9 @@
   img#user_avatar {
     width: 100%;
   }
+  @media screen and (max-width: 730px) {
+    flex: 0 0 100%;
+  }
 }
 p#user_description {
   flex: 0 0 calc(100% - 350px);

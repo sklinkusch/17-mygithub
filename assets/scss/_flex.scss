@@ -2,6 +2,10 @@ div.userInfo-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media screen and (max-width: 730px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
 div.sk-desc-row {
   display: flex;

@@ -7,6 +7,10 @@ div.userInfo-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between; }
+  @media screen and (max-width: 730px) {
+    div.userInfo-container {
+      flex-direction: column;
+      justify-content: flex-start; } }
 
 div.sk-desc-row {
   display: flex;
@@ -35,6 +39,9 @@ div.sk-desc-row {
   flex: 0 1 300px; }
   .avatar-container img#user_avatar {
     width: 100%; }
+  @media screen and (max-width: 730px) {
+    .avatar-container {
+      flex: 0 0 100%; } }
 
 p#user_description {
   flex: 0 0 calc(100% - 350px); }

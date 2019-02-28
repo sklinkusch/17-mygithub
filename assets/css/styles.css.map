@@ -5,18 +5,16 @@
 		"../scss/styles.scss",
 		"../scss/_reset.scss",
 		"../scss/_flex.scss",
-		"../scss/_float.scss",
 		"../scss/_typography.scss",
 		"../scss/_layout.scss"
 	],
 	"sourcesContent": [
-		"@import \"reset\";\n@import \"flex\";\n@import \"float\";\n@import \"typography\";\n@import \"layout\";\n",
+		"@import \"reset\";\n@import \"flex\";\n@import \"typography\";\n@import \"layout\";\n",
 		"* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n",
-		"div.userInfo-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\ndiv.sk-desc-row {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  div {\n    flex: 0 0 45%;\n  }\n}\n",
-		"",
+		"div.userInfo-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  @media screen and (max-width: 730px) {\n    flex-direction: column;\n    justify-content: flex-start;\n  }\n}\ndiv.sk-desc-row {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  div {\n    flex: 0 0 45%;\n  }\n}\n",
 		".sk-center-align {\n  text-align: center;\n}\n.sk-left-align {\n  text-align: left;\n}\n.sk-right-align {\n  text-align: right;\n}\n.sk-bold {\n  font-weight: bold;\n}\n.sk-italic {\n  font-style: italic;\n}\n",
-		".avatar-container {\n  flex: 0 1 300px;\n  img#user_avatar {\n    width: 100%;\n  }\n}\np#user_description {\n  flex: 0 0 calc(100% - 350px);\n}\ninput#page-info {\n  width: 120px;\n  text-align: center;\n}\n"
+		".avatar-container {\n  flex: 0 1 300px;\n  img#user_avatar {\n    width: 100%;\n  }\n  @media screen and (max-width: 730px) {\n    flex: 0 0 100%;\n  }\n}\np#user_description {\n  flex: 0 0 calc(100% - 350px);\n}\ninput#page-info {\n  width: 120px;\n  text-align: center;\n}\n"
 	],
 	"names": [],
-	"mappings": "ACAA,AAAA,CAAC,CAAC;EACA,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU,GACvB;;ACJD,AAAA,GAAG,AAAA,mBAAmB,CAAC;EACrB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,aAAa,GAC/B;;AACD,AAAA,GAAG,AAAA,YAAY,CAAC;EACd,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,aAAa,GAI/B;EARD,AAKE,GALC,AAAA,YAAY,CAKb,GAAG,CAAC;IACF,IAAI,EAAE,OAAO,GACd;;AEZH,AAAA,gBAAgB,CAAC;EACf,UAAU,EAAE,MAAM,GACnB;;AACD,AAAA,cAAc,CAAC;EACb,UAAU,EAAE,IAAI,GACjB;;AACD,AAAA,eAAe,CAAC;EACd,UAAU,EAAE,KAAK,GAClB;;AACD,AAAA,QAAQ,CAAC;EACP,WAAW,EAAE,IAAI,GAClB;;AACD,AAAA,UAAU,CAAC;EACT,UAAU,EAAE,MAAM,GACnB;;ACdD,AAAA,iBAAiB,CAAC;EAChB,IAAI,EAAE,SAAS,GAIhB;EALD,AAEE,iBAFe,CAEf,GAAG,AAAA,YAAY,CAAC;IACd,KAAK,EAAE,IAAI,GACZ;;AAEH,AAAA,CAAC,AAAA,iBAAiB,CAAC;EACjB,IAAI,EAAE,CAAC,CAAC,CAAC,CAAC,kBAAkB,GAC7B;;AACD,AAAA,KAAK,AAAA,UAAU,CAAC;EACd,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,MAAM,GACnB"
+	"mappings": "ACAA,AAAA,CAAC,CAAC;EACA,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU,GACvB;;ACJD,AAAA,GAAG,AAAA,mBAAmB,CAAC;EACrB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,aAAa,GAK/B;EAJC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;IAJrC,AAAA,GAAG,AAAA,mBAAmB,CAAC;MAKnB,cAAc,EAAE,MAAM;MACtB,eAAe,EAAE,UAAU,GAE9B;;AACD,AAAA,GAAG,AAAA,YAAY,CAAC;EACd,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,aAAa,GAI/B;EARD,AAKE,GALC,AAAA,YAAY,CAKb,GAAG,CAAC;IACF,IAAI,EAAE,OAAO,GACd;;AChBH,AAAA,gBAAgB,CAAC;EACf,UAAU,EAAE,MAAM,GACnB;;AACD,AAAA,cAAc,CAAC;EACb,UAAU,EAAE,IAAI,GACjB;;AACD,AAAA,eAAe,CAAC;EACd,UAAU,EAAE,KAAK,GAClB;;AACD,AAAA,QAAQ,CAAC;EACP,WAAW,EAAE,IAAI,GAClB;;AACD,AAAA,UAAU,CAAC;EACT,UAAU,EAAE,MAAM,GACnB;;ACdD,AAAA,iBAAiB,CAAC;EAChB,IAAI,EAAE,SAAS,GAOhB;EARD,AAEE,iBAFe,CAEf,GAAG,AAAA,YAAY,CAAC;IACd,KAAK,EAAE,IAAI,GACZ;EACD,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;IALrC,AAAA,iBAAiB,CAAC;MAMd,IAAI,EAAE,QAAQ,GAEjB;;AACD,AAAA,CAAC,AAAA,iBAAiB,CAAC;EACjB,IAAI,EAAE,CAAC,CAAC,CAAC,CAAC,kBAAkB,GAC7B;;AACD,AAAA,KAAK,AAAA,UAAU,CAAC;EACd,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,MAAM,GACnB"
 }
