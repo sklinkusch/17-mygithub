@@ -5,7 +5,6 @@ class GithubUser {
     this.id = "3a6a22eb32c03ecfd02b";
     this.secret = "6c1e72cc2af26bdab69798e0ce85f86fb00c3584";
     this.data = null;
-    this.viewData = null;
     this._page = null;
     this._pages = null;
     this.updateInfo();
@@ -126,7 +125,6 @@ class GithubUser {
   printRepos(repos) {
     const repoContainer = document.querySelector("#repos");
     const pageInfo = document.querySelector("#page-info");
-    this.viewData = repos;
     let html = repos
       .map(repo => {
         const {
